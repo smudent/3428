@@ -11,7 +11,6 @@ function setCalendar(ctx, user, x, y, width, height)
     var currentDay = date.getDay();
     var currentMonth = date.getMonth();
     var currentYear = date.getFullYear();
-    alert(getDays(1, 2100));
     var currentRow = 0;
     var trueDate = currentDate;
 
