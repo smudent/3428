@@ -1,0 +1,31 @@
+{
+  "name": "3428",
+  "version": "1.0.0",
+  "description": "Web application for residents of Northwood",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^3.0.1",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-inline": "^1.0.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-util": "^3.0.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smudent/CSCI3428.git"
+  },
+  "author": "Bits & Bytes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smudent/CSCI3428/issues"
+  },
+  "homepage": "https://github.com/smudent/CSCI3428#readme"
+}
