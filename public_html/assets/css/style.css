@@ -144,7 +144,7 @@ body {
     height: auto;
 }
 
-.container .btn {
+.container #homeButton {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -160,7 +160,7 @@ body {
     text-align: center;
 }
 
-.container .btn:hover {
+.container #homeButton:hover {
     background-color: black;
     color: white;
 }

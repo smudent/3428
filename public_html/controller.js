@@ -21,6 +21,10 @@ northApp.config(function($routeProvider) {
     });
 });
 
+northApp.controller('navController', function($scope, $location, ) {
+    $scope.currentPath = $location.path();
+});
+
 northApp.controller('mainController', function($scope) {
 });
 
@@ -37,7 +41,7 @@ northApp.directive('onResize', ['$window', function($window) {
     return {
         restrict : 'A',
         scope    : {
-            onSizeChanged: '&'
+            onResize: '&'
         },
         link: function (scope, $element, attr) {
             var element = $element[0];

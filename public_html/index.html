@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--Authors: Kabindra and Anis-->
 <html>
     <head>
       <title>NorthApp</title>
@@ -14,13 +13,13 @@
       <script src="controller.js"></script>
 </head>
   <body window-size my-directive ng-app="northApp">
-    <header>
+    <header ng-controller="navController">
       <nav class="navbar navbar-default">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="/">This is an example</a>
+            <a class="navbar-brand" href="/">NorthApp</a>
           </div>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" ng-hide="currentPath === '/'">
             <li><a href="#!"><i class="fa fa-home"></i> Home</a></li>
             <li><a href="#!notes"><i class="fa fa-book"></i> Notes</a></li>
             <li><a href="#!lifestyle"><i class="fa fa-heart"></i> Lifestyle</a></li>
