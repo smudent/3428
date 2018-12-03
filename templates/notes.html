@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+<html>
+    <head>
+      {% block meta %}
+        <meta charset='utf-8'>
+        <title></title>
+        {% load static %}
+        <link rel='stylesheet' href="{% static "/css/entries.css" %}">
+       {% endblock %}
+    </head>
+    <body>
+        <header>
+            User Name
+        </header>
+        <main>
+          {% block content %}
+            <div class="headers">
+                <div id="entry-head">
+                    <b>Your Notepad</b>
+                    <span id="edit-mode" class="no-display">
+                        <i> (edit mode) </i>
+                    </span>
+                </div>
+            </div>
+            <form method="post">
+            {% csrf_token %}
+            <notepad>
+                <div id="entry-title">
+                    <input id="title" name="title" type="text" placeholder="Title of your note">
+                </div>
+                <div id="entry-body">
+                    <textarea id="body" name="body" type="text" placeholder="Write some notes"></textarea>
+                </div>
+            </notepad>
+            <button id="btn-save" type="submit">Save</button>
+            </form>
+            <button id="btn-back" onclick='window.location.href="/notes/"'>Back</button>
+          {% endblock %}
+        </main>
+        <footer>
+            {% block footer %}
+            {% endblock %}
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+<html>
+  <head>
+  {% block meta %}
+    <meta charset='utf-8'>
+    <title></title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static "/css/entries.css" %}">
+    <link rel='sytlesheet' href="{% static "/css/style.css" %}">
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+  <script type='text/javascript' src="{% static "/notes/js/app.js" %}"></script>
+  {% endblock %}
+  </head>
+  <body>
+    <header>
+      {% block header %}
+      {% endblock %}
+    </header>
+    <main>
+    {% block content %}
+      <div class="headers">
+        <div id="list-head">
+          <b>Your Notes</b> 
+        </div>
+      </div>
+      {% if notes %}
+        <div id='listed'>
+            <ul class='entry-list'>
+              {% for note in notes %}
+              <li class="list-item">
+                  <button onclick='window.location.href="{{ note.get_absolute_url }}"'
+                      class="list-btn">
+                      {{ note.creation_date }}<br>{{ note.title }}
+                  </button>
+              </li>
+              {% endfor %}
+            </ul>
+      {% else %}
+            <p>No notes to display.</p>
+      {% endif %}
+        </div>
+        <button id="new-entry" class="option-btn" onclick='window.location.href = "/notes/new/"'>NEW NOTE</button>
+    {% endblock %}
+    </main>
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+  </body>
+
+</html>

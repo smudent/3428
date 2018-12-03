@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Notes - Northwood Planner</title>
+        {% load static %}
+        <script src="{% static "/users/js/user_test.js"  %}" type="text/javascript">
+        </script>
+        <script src="{% static "/users/js/note.js"  %}" type="text/javascript">
+        </script>
+        <script src="{% static "/users/js/themes.js"  %}" type="text/javascript">
+        </script>
+        <script src="{% static "/notes/js/set_notes.js"  %}" type="text/javascript">
+        </script>
+        <script src="{% static "/functions/set_font.js"  %}" type="text/javascript">
+        </script>
+
+        <link rel="stylesheet" href="{% static "graphics/background_light.png" %}">
+        <link rel="stylesheet" href="{% static "/css/style.css" %}">
+    </head>
+
+    <body>
+        <div onmousedown="ButtonPress(event)">
+
+        <canvas id = "canvas"></canvas>
+
+        <script>
+            var static_dir = "{% static "/" %}";
+            // Get user information
+            var user = new UserTest();
+
+            // Set up the window on load
+            window.onload = function() {
+                setNoteWindow(user);
+            }
+
+        </script>
+    </body>
+</html>

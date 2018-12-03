@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+<html>
+    <head>
+      {% block meta %}
+        <meta charset='utf-8'>
+        <title></title>
+        {% load static %}
+        <link rel='stylesheet' href="{% static "/css/entries.css" %}">
+       {% endblock %}
+    </head>
+    <body>
+        <header>
+            User Name
+        </header>
+        <main>
+          {% block content %}
+            <div class="headers">
+                <div id="entry-head">
+                    <h2><b>Created {{ note.creation_date }}</b></h2>
+                    <span id="edit-mode" class="no-display">
+                        <i> (edit mode) </i>
+                    </span>
+                </div>
+            </div>
+            {% csrf_token %}
+            <notepad>
+                <div id="entry-title">
+                    <p>{{ note.title }}</p>
+                </div>
+                <div id="entry-body">
+                    <p>{{ note.body }}</p>
+                </div>
+            </notepad>
+            <button id="btn-delete" onclick='window.location.href="/notes/delete/{{ note.id }}"'>Delete</button>
+            <button id="btn-back" onclick='window.location.href="/notes/"'>Back</button>
+          {% endblock %}
+        </main>
+        <footer>
+            {% block footer %}
+            {% endblock %}
+        </footer>
+    </body>
+
+</html>
