@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+<html>
+    <head>
+      {% block meta %}
+        <meta charset='utf-8'>
+        <title></title>
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+        {% load static %}
+        <link rel='stylesheet' href="{% static "/css/entries.css" %}">
+  <script type='text/javascript' src="{% static "/planner/js/app.js" %}"></script>
+      {% endblock %}
+    </head>
+    <body>
+        <header>
+        {% block header %}
+        {% endblock %}
+        </header>
+        <main>
+        {% block content %}
+            
+            <div class="headers">
+                <div id="entry-head">
+                    <b>New Event</b>
+                    <span id="edit-mode" class="no-display">
+                        <i> (edit mode) </i>
+                    </span>
+                </div>
+            </div>
+            <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="btn-save" type="submit">Save</button>
+            </form>
+            <button id="btn-back" onclick='window.location.href="/events/"'>Back</button>
+            {% endblock %}
+        </main>
+        <footer>
+          {% block footer %}
+          {% endblock %}
+        </footer>
+    </body>
+
+</html>

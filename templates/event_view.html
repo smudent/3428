@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+<html>
+    <head>
+      {% block meta %}
+        <meta charset='utf-8'>
+        <title></title>
+        {% load static %}
+        <link rel='stylesheet' href="{% static "/css/entries.css" %}">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+       {% endblock %}
+    </head>
+    <body>
+        <header>
+            User Name
+        </header>
+        <main>
+          {% block content %}
+            <div class="headers">
+                <div id="entry-head">
+                    <h2><b>{{ event.event_date }}</b></h2>
+                    <span id="edit-mode" class="no-display">
+                        <i> (edit mode) </i>
+                    </span>
+                </div>
+            </div>
+            <form method="post">
+            {% csrf_token %}
+            <notepad>
+                <div id="entry-title">
+                    <p>{{ event.title }}</p>
+                </div>
+                <div id="entry-body">
+                    <p>{{ event.body }}</p>
+                </div>
+            </notepad>
+            </form>
+            <button id="btn-delete" onclick='window.location.href="/events/delete/{{ event.id }}"'>Delete</button>
+            <button id="btn-back" onclick='window.location.href="/events/"'>Back</button>
+          {% endblock %}
+        </main>
+        <footer>
+            {% block footer %}
+            {% endblock %}
+        </footer>
+    </body>
+
+</html>

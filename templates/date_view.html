@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+<html>
+  <head>
+  {% block meta %}
+    <meta charset='utf-8'>
+    <title></title>
+    {% load static %}
+    <link rel="icon" type="image/png" href="{% static "/planner/images/calendar.png" %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href="{% static "/css/entries.css" %}">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+  <script type='text/javascript' src="{% static "/planner/js/app.js" %}"></script>
+  {% endblock %}
+  </head>
+  <body>
+    <header>
+      {% block header %}
+        <div class="headers">
+          <div id="list-head">
+          </div>
+        </div>
+      {% endblock %}
+    </header>
+    <main>
+    {% block content %}
+      {% if events %}
+        <div id='listed'>
+            <ul class="entry-list">
+              {% for event in events %}
+              <li class="list-item">
+                  <button onclick='window.location.href="{{ event.get_absolute_url }}"'
+                      class="list-btn">
+                      {{ event.event_date }}<br>{{ event.title }}
+                  </button>
+              </li>
+              {% endfor %}
+            </ul>
+      {% else %}
+            <p>No events to display.</p>
+      {% endif %}
+        </div>
+        <button id="new-entry" class="option-btn" onclick='window.location.href = "/events/new/"'>NEW EVENT</button>
+    {% endblock %}
+    </main>
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+  </body>
+</html>

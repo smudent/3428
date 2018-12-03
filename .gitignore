@@ -1,0 +1,6 @@
+doc/
+migrations/
+configs/
+*.un~
+run/
+*.mp4

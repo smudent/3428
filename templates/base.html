@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8" content="width=device-width, height=device-height, initial-scale=1.0">
+      {% block meta %}
+        <title>{% block title %}Northwood{% endblock %}</title>
+      {% endblock %}
+      {% load static %}
+      <link rel='stylesheet' href="{% static "/css/style.css" %}">
+    </head>
+    <body>
+        <header>
+          {% block header %}
+          {% endblock %}
+            {% if user.is_authenticated %}
+                <ul class="url-list">
+                {% if not current_path == '/home/' %}
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                {% endif %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+              </div>
+            {% else %}
+            {% endif %}
+        </header>
+        <main>
+            {% block content %}base.html{% endblock %}
+        </main>
+        <footer>
+            {% block footer %}{% endblock %}
+        </footer>
+    </body>
+</html>

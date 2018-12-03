@@ -1,0 +1,32 @@
+header {
+  text-align: left;
+  font-weight: bold;
+  font-size: 3em;
+  border-bottom: solid 3px #000
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  font-family: 'open sans', helvetica, arial, sans;
+  background: url(graphics/background_light.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+button {
+  font-style: arial;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.url-list {
+  text-align: right;
+}
+.url-list > li {
+  display: inline-block;
+  zoom:1;
+  font-weight: bold;
+}
