@@ -1,6 +1,8 @@
 # for now fetch the development settings only
 #from .development import *
 
+import dj_database_url
+
 # turn off all debugging
 DEBUG = False
 
