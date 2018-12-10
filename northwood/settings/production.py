@@ -1,5 +1,6 @@
 # for now fetch the development settings only
 #from .development import *
+from .common import *
 
 import dj_database_url
 
