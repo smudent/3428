@@ -34,6 +34,5 @@ SERVER_EMAIL = 'root@localhost'
 # how many days a password reset should work. I'd say even one day is too long
 PASSWORD_RESET_TIMEOUT_DAYS = 1
 
-DATABASES = {
-        'default': dj_database_url.config(default=DATABASE_URL)
-}
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(default=DATABASE_URL)
