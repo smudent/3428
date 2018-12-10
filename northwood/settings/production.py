@@ -35,4 +35,3 @@ SERVER_EMAIL = 'root@localhost'
 PASSWORD_RESET_TIMEOUT_DAYS = 1
 
 DATABASES = {}
-DATABASES['default'] = dj_database_url.config(default=DATABASE_URL)
